@@ -1,0 +1,24 @@
+GIT INIT
+
+
+
+git status // CONTROLE DE VERSAO QUE MAIS DE UMA PESSOA PODE MECHER OU VOLTAR UMA VERSAO
+
+git add "" // ADICIONAR AO VERSAO
+
+adicionar tudo // git add .
+
+
+git commit -m "commit incial"
+
+git config --global user.email "o meu email"
+
+git confi --global user.name "Joao Henrique"
+
+git commit -m "commit inicial"
+
+git push 
+
+git remote add origin LINK // criar repositorio no git
+
+git push --set-upstream origin master
