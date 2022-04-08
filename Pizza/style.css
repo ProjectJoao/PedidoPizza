@@ -1,0 +1,102 @@
+body{
+    margin: auto;
+    width: 60%;
+
+}
+
+h3{
+    display: flex;
+    justify-content: center;
+    color: black;
+
+}
+
+header{
+   display: flex;
+   justify-content: center;
+   background-color: green;
+   color: aliceblue;
+   text-align: center;
+}
+
+header ul li{
+    list-style: none;
+}
+
+section form ul li{
+    list-style: none;
+}
+
+section form ul li label{
+    font-size: 22px;
+}
+
+section{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    font-size: medium;
+}
+
+div {
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+   }
+
+   button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+   }
+
+   button:hover {
+    color: #e8e8e8;
+   }
+
+   button:hover::before {
+    width: 100%;
+   }
+
+section button{
+    margin: 5px;
+    font-size: 20px;
+}
+
+table{
+border: 1px solid black;
+border-collapse: collapse;
+width: 100%;
+}
+
+td, th {
+
+    border: 1px solid greenyellow;
+    text-align: center;
+    padding: 8px;
+}

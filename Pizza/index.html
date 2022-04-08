@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas de Pizza</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li>
+                <h1>Combos de Pizza</h1>
+            </li>
+
+        </ul>
+    </header>
+
+    <h3> <label id="h3">Faça um combo</label></h3>
+    <section>
+        <table id="compra">
+            <tr>
+                <th>Pizzas Salgadas</th>
+                <th>Pizza Doces</th>
+                <th>Bebidas</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" id="mussarela" name="pizzas">
+                    <label for="mussarela">Mussarela (R$25,00)</label>
+                </td>
+                <td>
+                    <input type="radio" id="chocolate" name="doces">
+                    <label for="chocolate">Chocolate (R$10,00)</label>
+                </td>
+                <td>
+                    <input type="radio" id="guarana" name="bebidas">
+                    <label for="guarana">Guarana (R$5,00)</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="radio" id="calabresa" name="pizzas">
+                    <label for="calabresa">Calabresa (R$20,00)</label>
+                </td>
+                <td>
+                    <input type="radio" id="morango" name="doces">
+                    <label for="morango">Morango (R$15,00)</label>
+                </td>
+                <td>
+                    <input type="radio" id="agua" name="bebidas">
+                    <label for="agua">Agua (R$5,00)</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" id="mista" name="pizzas">
+                    <label for="mista">Mista (R$15,00)</label>
+                </td>
+                <td>
+                    <input type="radio" id="banana" name="doces">
+                    <label for="banana"> Banana (R$18,00)</label>
+                </td>
+                <td>
+                    <input type="radio" id="suco" name="bebidas">
+                    <label for="suco">Suco (R$5,00)</label>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <div class="div">
+        <button id="Comprar">Compra</button>
+    </div>
+
+    <script>
+        'use strict';
+        //VARIAVEIS
+
+
+        const precosPizzasSalgadas = {
+            calabresa: 20.00,
+            mista: 15.00,
+            mussarela: 25.00,
+        }
+
+        const precosPizzasDoces = {
+            chocolate: 10.00,
+            morango: 15.00,
+            banana: 18.00,
+        }
+
+        const precosBebida = {
+            guarana: 20.00,
+            agua: 2.00,
+            suco: 10.00,
+        }
+
+        function buscaPizzaSalgadaSelecionada() {
+            const pizzasSalgadas = Array.from(document.getElementsByName('pizzas'))
+
+            const pizzaSalgadaSelecionada = pizzasSalgadas.filter((pizzaSalgada) => {
+                return pizzaSalgada.checked;
+            })[0]
+
+            return pizzaSalgadaSelecionada;
+        }
+
+        function buscaPizzaDoceSelecionada() {
+            const pizzasDoces = Array.from(document.getElementsByName('doces'))
+
+            const pizzaDoceSelecionada = pizzasDoces.filter((pizzaDoce) => {
+                return pizzaDoce.checked;
+            })[0]
+
+            return pizzaDoceSelecionada;
+        }
+
+        function buscaBebidaSelecionada() {
+            const bebidas = Array.from(document.getElementsByName('bebidas'))
+
+
+            const bebidaSelecionada = bebidas.filter((bebida) => {
+                return bebida.checked;
+            })[0]
+
+            return bebidaSelecionada;
+        }
+
+
+
+        let BtnComprar = document.getElementById('Comprar');
+
+        BtnComprar.addEventListener('click', Comprar, false);
+
+        function Comprar(e) {
+            const pizzaSalgadaSelecionada = buscaPizzaSalgadaSelecionada();
+            const pizzaDoceSelecionada = buscaPizzaDoceSelecionada();
+            const bebidaSelecionada = buscaBebidaSelecionada();
+
+            if (pizzaSalgadaSelecionada && pizzaDoceSelecionada && bebidaSelecionada) {
+                const total = parseInt(precosBebida[bebidaSelecionada.id]) + parseInt(precosPizzasDoces[pizzaDoceSelecionada.id]) + parseInt(precosPizzasSalgadas[pizzaSalgadaSelecionada.id])
+
+                alert("Total da sua compra foi: " + total);
+
+            } else {
+                alert("Favor verificar se marcou as opçoes");
+            }
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>
